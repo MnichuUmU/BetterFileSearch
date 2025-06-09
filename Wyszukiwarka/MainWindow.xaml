@@ -1,0 +1,63 @@
+﻿<Window x:Class="Wyszukiwarka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wyszukiwarka"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="auto" MaxHeight="475" Width="1100">
+    <StackPanel Orientation="Vertical" Height="auto" Background="#FF350000">
+        
+        <Grid Height="75" x:Name="GridUI">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Label Height="25" Foreground="White" >Folder*:</Label>
+                <TextBox x:Name="tbxPath" Width="300" Height="25" Margin="5,20,0,20" ></TextBox>
+                <Button x:Name="btnChooseDir" Height="25" Click="btnChooseDir_Click" Margin="0,10,30,10">V</Button>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Label Height="25" Foreground="White">Text:</Label>
+                <TextBox x:Name="tbxSName" Width="100" Height="25" Margin="0, 10, 10,10"></TextBox>
+                <Label Height="25" Foreground="White">Rozszerzenie:</Label>
+                <TextBox x:Name="tbxSEntention" Width="100" Height="25" Margin="0, 10, 10,10"></TextBox>
+            </StackPanel>
+            
+            
+            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                <Button x:Name="btnFind" Width="100" Height="25" Click="btnFind_Click" Margin="20,10,10,10">Wyszukaj</Button>
+                <Label x:Name="lblLoadedCount" Height="25" Width="100" Opacity="0.25" FontStyle="Italic" FontSize="10" Foreground="White">Załadowano: 0</Label>
+            </StackPanel>
+            <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center">
+                <Label x:Name="lblLoadning"></Label>
+            </StackPanel>
+        </Grid>
+        <Border BorderBrush="Black"
+                Background="LightGray"
+                BorderThickness="2">
+        <Grid Height="auto" MaxHeight="350">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+                <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+                <Grid x:Name="ViewFiles">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+        </Border>
+    </StackPanel>
+    
+    
+</Window>
